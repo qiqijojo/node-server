@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>node server学习</title>
+        <!-- 引入方式只能是 jquery.min.js 或者 /jquery.min.js -->
+        <script src="jquery.min.js"></script>
+    </head>
+    <body>
+        用户名：<input type="text" id="username">
+        <br>
+        密码：<input type="password" id="password">
+        <br>
+        <button id='login'>登录</button>
+        &nbsp;&nbsp;
+        <button id="register">注册</button>
+        <script>
+            $('#login').click(function() {
+                $.ajax({
+                    url: '/login',
+                    data: {
+                        username: $('#username').val(),
+                        password: $('#password').val()
+                    },
+                    dataType: 'json',
+                    success: function(res) {
+                        if (res.code == 0) {
+                            alert(res.msg);
+                            location.href = 'home.html';
+                        } else {
+                            alert(res.msg);
+                        }
+                    }
+                })
+            })
+            $('#register').click(function() {
+                $.ajax({
+                    url: '/register',
+                    method: 'post',
+                    data: {
+                        username: $('#username').val(),
+                        password: $('#password').val()
+                    },
+                    dataType: 'json',
+                    success: function(res) {
+                        if (res.code == 0) {
+                            alert(res.msg);
+                        } else {
+                            alert(res.msg);
+                        }
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>
