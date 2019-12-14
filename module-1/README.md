@@ -10,3 +10,4 @@ fs.readFile(`module-1${path}`, (err, data) => {
     }
 })
 ```
+- 从github克隆下来后，由于用到了jquery，因此需要手动在module-1目录下安装jquery。
