@@ -65,7 +65,7 @@ http.createServer((req, res) => {
             }
         } else {
             // 既不是登陆，又不是注册，那就是访问静态文件，如：localhost:8080/index.html
-            fs.readFile(`module-1${path}`, (err, data) => {
+            fs.readFile(`module-1${path}`, (err, data) => { // get请求path指的就是上面的静态文件index.html
                 if (err) {
                     res.writeHead(404);
                     res.end('404 not found');
