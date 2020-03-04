@@ -1,0 +1,24 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "node由浅入深学习",
+  "main": "server1.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jquery": "^3.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiqijojo/node-server.git"
+  },
+  "author": "JOJO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qiqijojo/node-server/issues"
+  },
+  "homepage": "https://github.com/qiqijojo/node-server#readme"
+}
