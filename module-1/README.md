@@ -11,3 +11,4 @@ fs.readFile(`module-1${path}`, (err, data) => {
 })
 ```
 - 从github克隆下来后，由于用到了jquery，因此需要手动在module-1目录下安装jquery。
+- 运行node server1.js后，打开浏览器输入`localhost:8080/home.html`或者`localhost:8080/index.html`即可，输入`localhost:8080`会报404 not found，因为域名后面没有path。

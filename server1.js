@@ -64,6 +64,7 @@ http.createServer((req, res) => {
                 }))
             }
         } else {
+            // 既不是登陆，又不是注册，那就是访问静态文件，如：localhost:8080/index.html
             fs.readFile(`module-1${path}`, (err, data) => {
                 if (err) {
                     res.writeHead(404);
