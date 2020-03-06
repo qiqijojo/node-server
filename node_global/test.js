@@ -40,7 +40,7 @@ setTimeout(() => {
 
 /** --------------------------path----------------------- */
 
-// const path = require('path');
+const path = require('path');
 
 // console.log(process.env.PATH);  // /Users/jojo/.nvm/versions/node/v10.15.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 // console.log(path.isAbsolute('/a/b/c'), path.sep, path.delimiter); // sep：操作系统路径分隔符； delimiter：操作系统环境变量分隔符
@@ -54,14 +54,25 @@ setTimeout(() => {
 // name: 'index' }
 // console.log(path.format(obj));
 
-// console.log(path.join('/a/b', '/index', '../'));
-// console.log(path.normalize('/a/b/c////index'));
+// console.log(path.join('/a/b', '/index', '../')); // /a/b/
+// console.log(path.resolve('/a/b', '/index', '../')); // /
+// console.log(path.normalize('/a/b/c////index')); // 格式化路径
 
-// console.log(path.relative('/a/b/c/aaa/bbb', '/a/b/ccc/ddd')); // 用于计算相对路径
+// console.log(path.relative('/a/b/c/aaa/bbb', '/a/b/ccc/ddd')); // 用于计算相对路径 ../../../
 
 // console.log(path.resolve('/a/b/c/aaa/bbb', './ccc'))
 // console.log(path.resolve('/a/b/c/aaa/bbb', '../ccc'))
-// console.log(path.resolve('/a/b/c/aaa/bbb', '/ccc'))
+// console.log(path.resolve('/a/b/c/aaa/bbb', 'ccc'))
+// console.log(path.resolve('/a/b/c/aaa/bbb', '//ccc'))
+// console.log(path.join('/a/b/c/aaa/bbb', '//ccc'))
+
+/**
+ * join和resolve的区别，
+ * join总会拼接，无论后面的有没有绝对路径/，都会将其拼接在前者路径后面，而resolve则会只返回绝对路径的路径，相当于将其前面的路径覆盖
+ * 总结两者的区别也只是在后面的是不是绝对路径，是：则有区别；不是：两者的结果一样
+ * 所以，最好用join吧，保险起见
+ */
+
 
 
 /** ========================fs查看文件状态===================== */
