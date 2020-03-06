@@ -110,10 +110,10 @@ fs.readFile(file, 'utf-8', (err, data) => {
 
 // let file = path.resolve(__dirname, 'data.txt');
 
-// // fs.appendFile(file, '你好呀', 'utf-8', (err) => { // 写入文件
-// fs.writeFile(file, '你好呀', 'utf-8', (err) => { // 追加写入文件
+// // fs.appendFile(file, '你好呀', 'utf-8', (err) => { // 追加写入文件
+// fs.writeFile(file, '你好呀', 'utf-8', (err) => { // 写入文件（如果这个文件不存在，就会创建该文件再写入）
 // // let buf = Buffer.from('abc');
-// // fs.writeFile(file, buf, 'utf-8', (err) => {
+// // fs.writeFile(file, buf, 'utf-8', (err) => { // 写入二进制文件
 //     if (err) {
 //         console.log('写入文件失败')
 //     } else {
@@ -263,7 +263,7 @@ fs.rmdir(deletePath, (err) => {
 //         console.log('读取目录失败', err); // 断网的情况下会出现error
 //     } else {
 //         // console.log('读取目录成功', files);
-//         files.map(item => {
+//         files.forEach(item => {
 //             let filePath = path.resolve(__dirname, item);
 
 //             /*
@@ -289,3 +289,36 @@ fs.rmdir(deletePath, (err) => {
 //         })
 //     }
 // });
+
+
+
+/** ========================目录操作练习（利用nodejs创建项目目录）===================== */
+
+const fs = require('fs');
+const path = require('path');
+
+// 封装一个对象专门创建项目
+class CreateProject {
+    constructor(rootePath, projectName) { // 构造器中，告诉我们需要创建到什么地方
+        this.rootePath = rootePath;
+        this.projectName = projectName;
+        this.subFiles = ['images', 'css', 'js', 'index.html'];
+    }
+    initProject() {
+        // 1. 创建站点文件夹
+        let projectPath = path.resolve(this.rootePath, this.projectName);
+        fs.mkdirSync(projectPath);
+        // 2. 创建子文件及子文件夹
+        this.subFiles.forEach(item => {
+            if (path.extname(item) === '') {
+                let dirPath = path.resolve(projectPath, item);
+                fs.mkdirSync(dirPath);
+            } else {
+                let filePath = path.resolve(projectPath, item);
+                fs.writeFileSync(filePath, ''); // 如果不写‘’，则会more给文件写入undefined
+            }
+        })
+    }
+}
+let cp = new CreateProject(__dirname, 'myProject');
+cp.initProject();
