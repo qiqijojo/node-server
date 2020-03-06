@@ -66,11 +66,13 @@ http.createServer((req, res) => {
         } else {
             // 既不是登陆，又不是注册，那就是访问静态文件，如：localhost:8080/index.html
             fs.readFile(`module-1${path}`, (err, data) => { // get请求path指的就是上面的静态文件index.html
+                console.log(data);
                 if (err) {
+                    // writeHead方法的作用：（1）告诉浏览器返回状态码，成功还是失败；（2）告诉浏览器返回的数据是什么类型的，返回的数据用什么字符集来解析
                     res.writeHead(404);
                     res.end('404 not found');
                 } else {
-                    res.end(data);
+                    res.end(data.toString());   // end方法的作用：结束本次请求并且返回数据
                 }
             })
         }

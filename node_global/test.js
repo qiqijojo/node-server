@@ -24,8 +24,8 @@ setTimeout(() => {
 // console.log(buf, buf1);
 
 
-// console.log(Buffer.isEncoding('UTF-8'));
-// console.log(Buffer.isEncoding('gbk'));
+// console.log(Buffer.isEncoding('UTF-8')); // true
+// console.log(Buffer.isEncoding('gbk')); // false
 
 
 // console.log(Buffer.isBuffer({}));
@@ -42,7 +42,7 @@ setTimeout(() => {
 
 // const path = require('path');
 
-// console.log(process.env.PATH);
+// console.log(process.env.PATH);  // /Users/jojo/.nvm/versions/node/v10.15.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 // console.log(path.isAbsolute('/a/b/c'), path.sep, path.delimiter); // sep：操作系统路径分隔符； delimiter：操作系统环境变量分隔符
 
 
@@ -294,6 +294,7 @@ fs.rmdir(deletePath, (err) => {
 
 /** ========================目录操作练习（利用nodejs创建项目目录）===================== */
 
+/*
 const fs = require('fs');
 const path = require('path');
 
@@ -321,4 +322,4 @@ class CreateProject {
     }
 }
 let cp = new CreateProject(__dirname, 'myProject');
-cp.initProject();
+cp.initProject(); */
