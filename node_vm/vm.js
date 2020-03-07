@@ -51,10 +51,21 @@ const vm = require('vm');
  * runInNewContext：提供了一个安全的环境给我们执行字符串中的代码
  * runInNewContext提供的环境不能访问本地的变量，也不能访问全局的变量（也就是global上的变量）
  */
-let name = 'jojo';
-let str = "console.log(name)";
-vm.runInNewContext(str); // name is not defined
+// let name = 'jojo';
+// let str = "console.log(name)";
+// let res = vm.runInNewContext(str); // name is not defined
 
 // global.name = 'jojo';
 // let str = "console.log(name)";
 // vm.runInNewContext(str); // name is not defined
+
+
+
+
+/** ---------------------------------测试------------------------------------------- */
+
+// let str = "(function(){return 1+2})()" // 立即执行函数，会直接执行，结果： 3
+let str = "(function(){return 1+2})" // 匿名函数，不会去执行，结果： function(){return 1+2}
+let res = vm.runInNewContext(str); // name is not defined
+console.log('9090', res);
+/** ---------------------------------测试------------------------------------------- */
