@@ -1,1 +1,1 @@
-exports.name = 'jojo';
+exports.name = "jojo";
