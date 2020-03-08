@@ -1,6 +1,6 @@
 {
   "name": "jojo-local-module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,6 @@
   },
   "keywords": ["publish", "npm", "local", "module", "jojo"],
   "author": "jojo",
-  "license": "ISC"
+  "license": "ISC",
+  "homepage": "https://github.com/qiqijojo/node-server/tree/master/publish_module"
 }
