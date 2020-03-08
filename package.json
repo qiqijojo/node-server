@@ -5,7 +5,7 @@
   "main": "server1.js",
   "dependencies": {},
   "devDependencies": {
-    "jojo-local-module": "^1.0.0",
+    "jojo-local-module": "^1.0.1",
     "jquery": "^3.4.1"
   },
   "scripts": {
