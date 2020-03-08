@@ -36,10 +36,10 @@ WQModule._extensions = {
 
         // 4. 执行转换之后的js代码
         // （1）如果所引入的文件是以module.exports导出的，则需要传module，如下：
-        // jsScript.call(module.exports, module.exports, wqRequire, module); // 第一个参数则是改变函数的this指向，后面的参数是为了函数运行而传的：function(exports, require, module, __filename, __dirname)
+        jsScript.call(module.exports, module.exports, wqRequire, module); // 第一个参数则是改变函数的this指向，后面的参数是为了函数运行而传的：function(exports, require, module, __filename, __dirname)
 
         // （2）如果所引入的文件是以exports方式导出的，则只需要传前两个参数，如下：
-        jsScript.call(module, module.exports);
+        // jsScript.call(module, module.exports);
     },
     '.json': (module) => {
         // 读取文件
