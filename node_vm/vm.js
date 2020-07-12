@@ -66,6 +66,6 @@ const vm = require('vm');
 
 // let str = "(function(){return 1+2})()" // 立即执行函数，会直接执行，结果： 3
 let str = "(function(){return 1+2})" // 匿名函数，不会去执行，结果： function(){return 1+2}
-let res = vm.runInNewContext(str); // name is not defined
+let res = vm.runInNewContext(str);
 console.log('9090', res);
 /** ---------------------------------测试------------------------------------------- */
