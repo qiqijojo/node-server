@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "commander": "^8.0.0",
+    "inquirer": "^8.1.2",
     "jojo-local-module": "^1.1.0",
     "jquery": "^3.4.1"
   },
