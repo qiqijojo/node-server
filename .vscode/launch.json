@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Launch Program",
+            // "skipFiles": [
+            //     "<node_internals>/**"
+            // ],
+            "program": "${workspaceFolder}/inquirerTool/index.js"
+        }
+    ],
+
+    // // 配置名称，将会在启动配置的下拉菜单中显示
+    // "name": "test",
+    // // 配置类型
+    // "type": "node",
+    // // 请求配置类型，能够为launch（启动）或attach（附加）
+    // "request": "launch",
+    // // 将要进行调试的程序的路径
+    // "program": "${workspaceFolder}/app.js",
+    // // 程序调试时传递给程序的命令行参数，通常设为空便可
+    // "args": [],
+    // // console执行方式 一、integratedTerminal 编辑器内部终端执行 二、externalTerminal 外部终端执行
+    // "console": "integratedTerminal"
+}
